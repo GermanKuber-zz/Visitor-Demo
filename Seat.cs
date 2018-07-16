@@ -10,8 +10,8 @@ namespace Visitor.Core
 
         public Seat(string name, int capacity)
         {
-            this._name = name;
-            this._capacity = capacity;
+            _name = name;
+            _capacity = capacity;
         }
 
 

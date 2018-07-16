@@ -13,8 +13,8 @@ namespace Visitor.Core
 
         public Engine(float power, float cylinderVolume)
         {
-            this._power = power;
-            this._cylinderVolume = cylinderVolume;
+            _power = power;
+            _cylinderVolume = cylinderVolume;
         }
 
    
@@ -26,13 +26,13 @@ namespace Visitor.Core
 
             if (time > heatingTime)
             {
-                this._temperatureC = WorkingTemperatureC;
+                _temperatureC = WorkingTemperatureC;
             }
             else
             {
-                double temperatureDelta = WorkingTemperatureC - this._temperatureC;
+                double temperatureDelta = WorkingTemperatureC - _temperatureC;
                 var timeRatio = time.TotalMinutes / heatingTime.TotalMinutes;
-                this._temperatureC += (float)(temperatureDelta * timeRatio);
+                _temperatureC += (float)(temperatureDelta * timeRatio);
             }
 
         }
@@ -43,7 +43,7 @@ namespace Visitor.Core
             var meanPower = 180.0;
             var nominalHeatingTimeSec = 300.0;
 
-            var seconds = (int)(nominalHeatingTimeSec * meanPower / this._power);
+            var seconds = (int)(nominalHeatingTimeSec * meanPower / _power);
 
             return new TimeSpan(0, 0, seconds);
 
